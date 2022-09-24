@@ -2,13 +2,15 @@ import CommonCard from "./CommonCard";
 import {useState} from "react";
 import ReactECharts from "echarts-for-react";
 import './TotalUsers.less'
+import useComputeData from "../../hooks/useComputeData";
 
 function TotalUsers() {
-    const [userToday, setuserToday] = useState('2,359,297');
-    const [userGrowthLastDay, setuserGrowthLastDay] = useState('135.87%');
-    const [userGrowthLastMonth, setuserGrowthLastMonth] = useState('194.84%');
-    const [userLastMonth, setuserLastMonth] = useState(800000);
-    const [userTodayNumber, setuserTodayNumber] = useState(2359297);
+    const {userToday, userGrowthLastDay, userGrowthLastMonth, userLastMonth, userTodayNumber} = useComputeData();
+    // const [userToday, setuserToday] = useState('2,359,297');
+    // const [userGrowthLastDay, setuserGrowthLastDay] = useState('135.87%');
+    // const [userGrowthLastMonth, setuserGrowthLastMonth] = useState('194.84%');
+    // const [userLastMonth, setuserLastMonth] = useState(800000);
+    // const [userTodayNumber, setuserTodayNumber] = useState(2359297);
 
     const getOptions = () => {
         return {

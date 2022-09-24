@@ -1,9 +1,12 @@
 import {useState, useEffect} from "react";
 import ReactECharts from "echarts-for-react";
 import 'echarts-liquidfill'
+import useComputeData from "../../hooks/useComputeData";
+import {AjaxContext} from "../../App";
 
 function LiquidFill() {
-    const precent = 0.9205
+    const {userGrowthLastMonth} = useComputeData(AjaxContext);
+    const precent = userGrowthLastMonth / 100
     function getColor(value) {
         return value > 0 && value <= 0.5 ? 'rgba(97,216,0,.7)'
             : value > 0.5 && value <= 0.8 ? 'rgba(204,178,26,.7)'

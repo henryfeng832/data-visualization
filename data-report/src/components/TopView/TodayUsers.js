@@ -1,11 +1,13 @@
 import CommonCard from "./CommonCard";
 import {useState} from "react";
 import ReactECharts from "echarts-for-react";
+import useComputeData from "../../hooks/useComputeData";
 
 function TodayUsers() {
-    const [orderUser, setOrderUser] = useState('1,355,833');
-    const [returnRate, setReturnRate] = useState('5.51%');
-    const [orderUserTrend, setOrderUserTrend] = useState([410, 82, 200, 334, 390, 330, 220, 150, 82, 200, 134, 290, 330, 150]);
+    const {orderUser, returnRate, orderUserTrend} = useComputeData();
+    // const [orderUser, setOrderUser] = useState('1,355,833');
+    // const [returnRate, setReturnRate] = useState('5.51%');
+    // const [orderUserTrend, setOrderUserTrend] = useState([410, 82, 200, 334, 390, 330, 220, 150, 82, 200, 134, 290, 330, 150]);
 
     const getOptions = () => {
         return {

@@ -2,12 +2,14 @@ import {useState} from "react";
 import ReactECharts from 'echarts-for-react';
 
 import CommonCard from "./CommonCard";
+import useComputeData from "../../hooks/useComputeData";
 
 
 function TotalOrders() {
-    const [orderToday, setOrderToday] = useState('7,078,182');
-    const [orderLastDay, setOrderLastDay] = useState('2,000,000');
-    const [orderTrend, setOrderTrend] = useState([620, 432, 220, 534, 790, 430, 220, 320, 532, 320, 834, 690, 530, 220, 620]);
+    const {orderToday, orderLastDay, orderTrend} = useComputeData();
+    // const [orderToday, setOrderToday] = useState('7,078,182');
+    // const [orderLastDay, setOrderLastDay] = useState('2,000,000');
+    // const [orderTrend, setOrderTrend] = useState([620, 432, 220, 534, 790, 430, 220, 320, 532, 320, 834, 690, 530, 220, 620]);
 
     const getOptions = () => {
         return orderTrend.length > 0 ? {
@@ -38,7 +40,7 @@ function TotalOrders() {
                 left: 0,
                 right: 0
             }
-        } : null
+        } : {}
     }
 
     const footer = (<>

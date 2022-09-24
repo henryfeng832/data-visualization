@@ -2,12 +2,14 @@ import {useState} from "react";
 
 import CommonCard from "./CommonCard";
 import './TotalSales.less';
+import useComputeData from "../../hooks/useComputeData";
 
 function TotalSales() {
-    const [salesToday, setSalesToday] = useState('¥ 30,683,473')
-    const [salesGrowthLastDay, setSalesGrowthLastDay] = useState('2.28%');
-    const [salesGrowthLastMonth, setSalesGrowthLastMonth] = useState('32.26%');
-    const [salesLastDay, setSalesLastDay] = useState('¥ 30,000,000');
+    const {salesToday, salesGrowthLastDay, salesGrowthLastMonth, salesLastDay} = useComputeData();
+    // const [salesToday, setSalesToday] = useState('¥ 30,683,473')
+    // const [salesGrowthLastDay, setSalesGrowthLastDay] = useState('2.28%');
+    // const [salesGrowthLastMonth, setSalesGrowthLastMonth] = useState('32.26%');
+    // const [salesLastDay, setSalesLastDay] = useState('¥ 30,000,000');
 
     const footer = (
         <>
